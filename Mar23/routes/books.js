@@ -1,0 +1,11 @@
+var express = require("express");
+var router = express.Router();
+var booksController = require("../controllers/books");
+router.get("/", booksController.getBooks);
+router.post("/", booksController.createBooks);
+router.get("/bookswithcategory", booksController.getBooksWithCategory);
+router.get("/bookwithauthor", booksController.getBooksWithAuthor);
+router.get("/authorandcategory", booksController.getBooksWithCategoryAndAuthor);
+router.get("/bookswithcondition/:name", booksController.getBooksWithCondition);
+router.get("/:id", booksController.getBooksWithId);
+module.exports = router;
